@@ -1,8 +1,9 @@
 package ru.chalovai.lab13;
 
 public class Password {
+
     public static void main(String[] args) {
-        String passwd = "F032_Password";
+        String passwd = "F_Psword";
         /* ^                 Начало строки
            (?=.*[0-9])       Цифра содержится в строке хотя бы 1 раз
            (?=.*[a-z])       Буква из нижнего регистра содержится хотя бы 1 раз
