@@ -7,10 +7,16 @@ import java.util.regex.Pattern;
 
 public class Date {
     public static boolean regex(String regex, String text) {
-        //Note: Use \\ instead of \ in Java
+        // compile(String regex) – возвращает Pattern, который соответствует regex;
         Pattern pricePattern = Pattern.compile(regex);
+
+        // matcher(CharSequence input) – возвращает Matcher, с помощью которого можно
+        // находить соответствия в строке input
         Matcher matcher = pricePattern.matcher(text);
+
         boolean found = false;
+        // find() – пытается найти последовательность символов, соответствующих шаблону,
+        // в любом месте строки
         while (matcher.find()) {
             System.out.println(text.substring(matcher.start(), matcher.end()));
             found = true;
@@ -18,12 +24,17 @@ public class Date {
         return found;
     }
 
+    // + - 1 и более раз
+    // * - 0 и более раз
+    // ? - 1 любой символ
+
     public static void main(String[] args) {
 
         //Задача №1 - Извлечение цен из текста
         String priceRegex = "((?<=\\s)[0-9]\\d*(?:.\\d{0,2})\\s(?:USD|EU|RUB))";
         String priceText = "44.00 45.1 66 ERR, 5.6 0.613 USD ERR 25.98 USD, 44 RUB, 0.004 EU,  456 USD 0.613 USD, RUB, 45.10 EU 0.11 0.0";
         regex(priceRegex, priceText);
+        System.out.println();
 
         //Задача №2 - Есть ли в тексте цифры, за которыми не стоит "+"
         String positiveNumberRegex = "[+]\\s\\d";
@@ -32,6 +43,7 @@ public class Date {
         if (regex(positiveNumberRegex, numberText)) {
             System.out.println(regex(otherNumberRegex, numberText));
         }
+        System.out.println();
 
         //Задача №3 - Валидация даты в формате dd/mm/yyyy (1900-1999)
         String dateRegex = "([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)((1)(9)[0-9]{2}|[2-9][0-9]{3})";
@@ -47,6 +59,7 @@ public class Date {
                 System.out.println(dateText + " is Invalid Date format");
             }
         }
+        System.out.println();
 
         //Задача №4 - Валидация e-mail адреса (user@mail.ru)
         String emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
