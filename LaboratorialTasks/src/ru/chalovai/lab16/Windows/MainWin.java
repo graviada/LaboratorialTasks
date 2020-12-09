@@ -20,7 +20,6 @@ public class MainWin extends JFrame {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // Создание текстовых полей
         email = new JTextField(15);
         email.setText("Почта");
         enter =new JButton("Вход");
