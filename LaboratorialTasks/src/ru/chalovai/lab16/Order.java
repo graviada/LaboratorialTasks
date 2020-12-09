@@ -1,13 +1,15 @@
 package ru.chalovai.lab16;
 
 public interface Order {
-    public boolean add(Item one);
-    public boolean remove(String name);
-    public int removeAll(String name);
-    public int itemQuantity();
-    public int itemQuantity(String dishName);
-    public Item[] getItems();
-    public double costTotal();
+    public boolean add(MenuItem item);
     public String[] itemsNames();
-    public Item[] sortedDishesByCost();
+    public int itemQuantity();
+    public int itemQuantity(String itemName);
+    public int itemQuantity(MenuItem menuItem);
+    public MenuItem[] getItems();
+    public boolean remove(String itemName);
+    public boolean removeAll(MenuItem item);
+    public MenuItem[] sortedItemsByCostDesc();
+    public int priceTotal();
+
 }

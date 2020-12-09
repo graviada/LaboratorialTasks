@@ -1,18 +1,18 @@
 package ru.chalovai.lab16;
 
-public class InternetOrder implements Order {
+public class TableOrder implements Order {
     private int size;
     private final  int size_mas = 10;
     private int position;
     private MenuItem mials[];
 
-    public InternetOrder(){
+    public TableOrder(){
         this.mials=new MenuItem[size_mas];
         position =0;
     }
 
     public boolean add(MenuItem item) {
-        mials[position]=item;
+        mials[position] = item;
         position++;
         return true;
     }
@@ -84,6 +84,8 @@ public class InternetOrder implements Order {
 
     public MenuItem[] sortedItemsByCostDesc() {
         for (int i = 0; i < mials.length; i++) {
+
+
             MenuItem min = mials[i];
             int min_i = i;
 
@@ -106,6 +108,7 @@ public class InternetOrder implements Order {
 
         return this.mials;
     }
+
 
     public int priceTotal() {
         int price = 0;

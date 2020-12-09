@@ -5,7 +5,7 @@ public enum DrinkTypeEnum {
     Wine,
     Vodka,
     Brandy,
-    Champacne,
+    Champaign,
     Whiskey,
     Tequila,
     Rum,

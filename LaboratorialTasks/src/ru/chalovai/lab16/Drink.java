@@ -6,47 +6,14 @@ package ru.chalovai.lab16;
 // Конструктор классов Drink и Dish должен выбрасывать исключение java.lang.IllegalArgumentException при попытке создать
 // блюдо или напиток со стоимостью меньше 0, без имени или описания (если параметры имя и описание - пустые строки).
 
-public final class Drink implements Item {
-    private final String name, description;
-    private final double price;
-
-    // Конструкторы:
+public final class Drink extends MenuItem {
+    // Конструктор:
     // −принимающий три параметра – стоимость, название и описание.
-    public Drink(String name, String description, double price) throws Exception {
-        this.name = name;
-        this.description = description;
-        this.price = price;
+    public Drink(String name, String description, double price, DrinkTypeEnum type) throws Exception {
+        super(price, name, description);
         if (name.equals("") || description.equals("") || price == 0)
             // Исключение java.lang.IllegalArgumentException
             throw new Exception("java.lang.IllegalArgumentException ");
     }
-
-    // −принимающий два параметра – название и описание. Стоимость при этом инициализируется значением 0;
-    public Drink(String name, String description) throws Exception {
-        this.name = name;
-        this.description = description;
-        this.price = 0;
-        // Исключение java.lang.IllegalArgumentException
-        throw new Exception("java.lang.IllegalArgumentException ");
-    }
-
-    // Методы:
-    // − возвращающий стоимость.
-    public double getPrice() {
-        return price;
-    }
-
-    // − возвращающий описание.
-    public String getDescription() {
-        return description;
-    }
-
-    // − возвращающий название.
-    public String getName() {
-        return name;
-    }
-
-    public String toString() {
-        return "Цена: " + price + ", Напиток: " + name;
-    }
 }
+

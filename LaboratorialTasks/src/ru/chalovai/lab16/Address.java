@@ -1,22 +1,24 @@
 package ru.chalovai.lab16;
 
 public class Address {
-    public String name;
-    public String city;
-    public String avenue;
-    public int house;
+    private String cityName;
+    private int zipCode;
+    private String streetName;
+    private int apartmentNumber;
 
-    Address(String name, String city, String avenue, int house){
-        this.name = name;
-        this.city = city;
-        this.avenue = avenue;
-        this.house = house;
+    public String getCityName() {
+        return cityName;
     }
 
-    Address(String name, String city, String avenue, String house){
-        this.name = name;
-        this.city = city;
-        this.avenue = avenue;
-        this.house = Integer.parseInt(house);
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public int getApartmentNumber() {
+        return apartmentNumber;
     }
 }

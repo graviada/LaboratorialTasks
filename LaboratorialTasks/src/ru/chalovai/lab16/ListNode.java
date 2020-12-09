@@ -1,18 +1,28 @@
 package ru.chalovai.lab16;
 
 public class ListNode {
-    public ListNode next;
-    public ListNode previous;
-    public Item value;
+    Drink drink;
+    Dish dish;
+    ListNode next;
+    ListNode previous;
 
-    ListNode(ListNode next, ListNode previous, Item value){
+    ListNode(Drink drink) {
+        this(null, drink, null);
+    }
+
+    ListNode(Dish dish) {
+        this(null, dish, null);
+    }
+
+    ListNode(ListNode previous, Drink drink, ListNode next) {
+        this.drink = drink;
         this.next = next;
         this.previous = previous;
-        this.value = value;
     }
 
-    ListNode(Item value){
-        this(null, null, value);
+    ListNode(ListNode previous, Dish dish, ListNode next) {
+        this.dish = dish;
+        this.next = next;
+        this.previous = previous;
     }
 }
-
